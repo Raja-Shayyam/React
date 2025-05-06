@@ -1,0 +1,93 @@
+# list.jsx
+
+export function List({Items})
+{
+  //let foodItems = ['dall','green Vegitable','Egg','Meat' , 'Date'];
+
+  console.log(props)
+
+  return(
+  <>
+    
+    <ul id="list-ul">
+      <li>defualt</li>
+      {
+        Items.map((fItems)=>{
+          <li key={fItems.foodItems}>{fItems.foodItems}</li>
+        })
+      }
+     </ul>
+     <span>Items in cart {foodItems.length} </span>
+  </>
+  );
+}
+
+
+
+
+
+// # method 3
+/*
+export function List()
+{
+  
+  
+  return(
+  <>
+  {foodItems.length === 0 &&
+  <span> <li>I am Still hungary</li> Items in cart {foodItems.length} </span>}
+    <ul id="list-ul">
+      <li>defualt</li>
+      {foodItems.map(items=><li key={items}>{items}</li>)}
+     </ul>
+     <span>Items in cart {foodItems.length} </span>
+  </>
+  );
+}
+*/
+
+// method 2
+// export function List()
+// {
+//   // let foodItems = ['dall','green Vegitable','Egg','Meat' , 'Date'];
+//   let foodItems = [];
+  
+//   let emptyMsg = foodItems.length === 0 ?
+//   <span> <li>I am Still hungary</li> Items in cart {foodItems.length} </span> : null ;
+//   return(
+//   <>
+//   {emptyMsg}
+//     <ul id="list-ul">
+//       <li>defualt</li>
+//       {foodItems.map(items=><li key={items}>{items}</li>)}
+//      </ul>
+//      <span>Items in cart {foodItems.length} </span>
+//   </>
+//   );
+// }
+
+
+// method 1 :
+// through simple conditions otside jsx or return
+/**export function List()
+{
+  let foodItems = ['dall','green Vegitable','Egg','Meat' , 'Date'];
+
+  if(foodItems.length === 0)
+  {
+    return <>
+      <li>I am Still hungary</li>
+      <span>Items in cart {foodItems.length} </span>
+      </>
+  }
+
+  return(
+  <>
+    <ul id="list-ul">
+      <li>defualt</li>
+      {foodItems.map(items=><li key={items}>{items}</li>)}
+     </ul>
+     <span>Items in cart {foodItems.length} </span>
+  </>
+  );
+} */
