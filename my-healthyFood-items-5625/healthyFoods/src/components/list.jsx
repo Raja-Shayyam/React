@@ -8,16 +8,24 @@ export function List({Items})
 console.log('list items', i)
   return(
   <>
-    <ul class={`${style['my-foods']}`}
+    <ul className={`${style['my-foods']}`}
       style={{
         margin : 5+'px',
         paddingLeft : 3+'px'
       }}
     >
-        {
-         <Foods  fooditem={Items}>.</Foods>
-        }
+       
+       <li className={`${style['my-li']}`} >mash ki daal</li>
+       {
+          Items.map((Itm)=><Foods fooditem={Itm} 
+          clickbtnWorking={
+                ()=>console.log('buyed ' , Itm)
+          }
+         ></Foods> )
+       }
+
     </ul>
+    <div className={`${style['my-span']}`}>Items in cart {Items.length} </div>
   </>
   );
 }

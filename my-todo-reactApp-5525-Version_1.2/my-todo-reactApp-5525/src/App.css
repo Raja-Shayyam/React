@@ -1,0 +1,13 @@
+#heading-list{
+  margin: 8px;
+}
+#heading-list div{
+  display:inline;
+  padding: 5px;
+}
+#heading-list button{
+  background-color:  rgb(131, 226, 131);
+  padding: 5px;
+  border: 0.2em;
+  cursor: pointer;
+}

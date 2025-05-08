@@ -8,6 +8,16 @@
   justify-content:center;
 }
 
+#para{
+  margin: 1px 10px;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 8px double gray ;
+  border-top: 1px solid gray ;
+  border-top-right-radius: 12px ;
+  border-top-left-radius: 12px ;
+}
+
 /* 
 .logo {
   height: 6em;

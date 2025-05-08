@@ -1,5 +1,5 @@
 {
-  "name": "reactfirst.json",
+  "name": "pakage-lock.json",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

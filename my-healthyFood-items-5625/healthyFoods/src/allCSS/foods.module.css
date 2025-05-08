@@ -1,15 +1,15 @@
 .my-li{
-  padding: 2px;
+  display:block;
+  padding: 5px;
   margin: 5px;
   background-color: aquamarine;
-  width: 120px;
+  /* width: 120pxssss; */
 }
 
-.my-span{
-  padding: 5px; 
-  margin: 10px 5px;
-  color: chocolate;
-  background-color: rgb(222, 225, 227);
-  max-width: 200px;
-  position:relative;
+
+
+ .btn{ 
+  /* position:relative; */
+  float: right;
+  /* margin: 5px; */
 }

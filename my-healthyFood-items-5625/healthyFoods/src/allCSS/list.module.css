@@ -1,7 +1,22 @@
 .my-foods{
-  max-width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* max-width: 300px; */
+  
   background-color: rgb(74, 74, 168);
+}
+
+.my-span{
+  padding: 5px; 
+  margin: 10px 5px;
+  color: chocolate;
+  background-color: rgb(222, 225, 227);
+  /* max-width: 200px; */
+  text-align: center;
+}
+
+.my-li{
+  display:block;
+  padding: 5px;
+  margin: 5px;
+  background-color: aquamarine;
+  /* width: 120pxssss; */
 }
