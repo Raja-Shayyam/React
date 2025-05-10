@@ -6,18 +6,24 @@ const Foods = ({fooditem , clickbtnWorking })=>{
 //console.log("> ", {fooditem} )
 // const clickbtnWorking = (fi)=>{
 //   console.log(fi)
-// }
-
+// // }
+let bool;
+// `${bool=true}`
+//               `${console.log('true')}`
   return(
     <>
       
       {
         
-          <li className={`${style['my-li']}`} 
+          <li className={`${style['my-li']}
+           ${bool && style['activated']}`} 
             key={fooditem}>{fooditem} 
           
           <button className={style.btn}
-            onClick={ clickbtnWorking }
+            onClick={ 
+              clickbtnWorking
+              
+            }
           >
             Buy
             </button>
@@ -34,6 +40,7 @@ const Foods = ({fooditem , clickbtnWorking })=>{
 };
 
 export default Foods;
+
 
 
 /**

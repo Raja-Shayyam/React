@@ -1,4 +1,4 @@
-const InputField = ({Onchange})=>{
+const InputField = ({onkeydown})=>{
   
   return(
     <div
@@ -10,9 +10,7 @@ const InputField = ({Onchange})=>{
     <label htmlFor="text">Search : </label>
     <input  type="text"
       placeholder="Entre Food items ..."
-      onChange={
-        Onchange
-      }
+      onKeyDown={onkeydown}
       style={{
         margin:5 +'px',
         fontFamily :"monospace",

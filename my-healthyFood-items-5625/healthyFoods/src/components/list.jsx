@@ -1,9 +1,12 @@
+import React, { useState }  from "react";
+import Container from "./Container";
 import Foods from "./foods";
 import style from "../allCSS/list.module.css";
 
 console.log('list');
 export function List({Items})
 {
+  let [buyeditem , joBuyKiya_abi ] = useState (['not buyed yet anyThing']);
   let i = Items;
 console.log('list items', i)
   return(
@@ -19,13 +22,24 @@ console.log('list items', i)
        {
           Items.map((Itm)=><Foods fooditem={Itm} 
           clickbtnWorking={
-                ()=>console.log('buyed ' , Itm)
+              ()=>{
+                console.log('buyed ' , Itm)
+                let newary = [...buyeditem , Itm]
+                joBuyKiya_abi(newary)
+              }
           }
          ></Foods> )
        }
 
     </ul>
     <div className={`${style['my-span']}`}>Items in cart {Items.length} </div>
+    
+    <Container>
+    {
+      buyeditem.map((buyediteM)=><li>{buyediteM}</li>)
+    }
+    </Container>
+
   </>
   );
 }
