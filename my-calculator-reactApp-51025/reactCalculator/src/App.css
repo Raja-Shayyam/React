@@ -1,0 +1,37 @@
+#container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border: 2px solid rgb(68, 39, 39);
+  width: 250px;
+  
+  color: blue;
+}
+
+
+#display{
+  padding: 5px 10px 5px 5px;
+  margin: 10px auto;
+  width: 80%;
+  border: 1.5px solid rgb(52, 52, 52);
+  font: caption;
+  text-align: right;
+}
+
+/* 
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
