@@ -1,0 +1,29 @@
+#heading-list{
+  margin: 8px;
+}
+#heading-list div{
+  display:inline;
+
+  padding: 5px;
+}
+#heading-list button{
+  background-color:  rgb(131, 226, 131);
+  padding: 5px;
+  border: 0.2em solid rgb(57, 59, 38);
+  cursor: pointer;
+}
+
+#heading-list #add-btn{
+  display: block;
+  text-align: center;
+}
+
+#add-btn button{
+  width: 60%;
+  margin: 8px auto;
+  border-radius: 16px;
+}
+
+#add-btn button:hover{
+  background-color: green;
+}

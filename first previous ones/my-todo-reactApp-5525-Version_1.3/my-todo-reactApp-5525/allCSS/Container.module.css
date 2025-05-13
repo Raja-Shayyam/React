@@ -1,0 +1,8 @@
+.container{
+  margin: 10px auto;
+  background-color: antiquewhite;
+  width: 100%;
+  max-width: 36.5%;
+  display: block;
+  align-items: center;
+}

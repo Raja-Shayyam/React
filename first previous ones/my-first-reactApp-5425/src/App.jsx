@@ -2,6 +2,7 @@ import { MyButton } from "./my_components/KgButton";
 import { Hi_hello } from "./my_components/hello";
 import Random from "./my_components/random_number";
 
+
 function App()
 {
   return <div>
@@ -16,7 +17,7 @@ function App()
     <Random/> 
     <Random/> 
 
-  </div>
+  </div> 
 //    <Random/>  this is also type of declaration ;
 
 }
