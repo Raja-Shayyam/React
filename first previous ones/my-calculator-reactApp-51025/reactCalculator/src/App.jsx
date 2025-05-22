@@ -8,6 +8,8 @@ function App()
   
   let [Idisplay , setDisplay] = useState('0')
   
+  let i=90 
+  let m= 88888870-099999998;
   const cli=(e)=>{
     console.log(e)
     let nums = e ;
