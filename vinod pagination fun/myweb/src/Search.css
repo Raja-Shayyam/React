@@ -1,0 +1,132 @@
+/* .search {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.search .search_input {
+    padding: 0 10px;
+    width: 550px;
+    caret-color: red;
+    transition: width 0.4s linear;
+}
+
+.search:hover>.search_icon {
+    background: red;
+    color: #fff;
+}
+
+.search_icon {
+    height: 50px;
+    width: 50px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
+
+a:link {
+    text-decoration: none;
+} */
+
+/* Base styles for the search bar container */
+.search {
+    /* Center vertically using Bootstrap-compatible auto margins */
+    margin: auto;
+    /* Slightly reduced height for a compact, modern look */
+    height: 3.5rem; /* 56px at 16px base font */
+    background-color: #fff;
+    /* Softer border-radius for a pill-like shape */
+    border-radius: 2rem; /* 32px */
+    padding: 0.5rem; /* 8px, reduced for balance */
+    /* Ensure responsiveness with max-width */
+    max-width: 100%;
+    width: 32rem; /* 512px, suitable for most screens */
+    /* Flexbox for internal alignment */
+    display: flex;
+    align-items: center;
+    /* Subtle shadow for depth (Bootstrap-inspired) */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Input field styles */
+.search_input {
+    color: #333; /* Darker for readability */
+    border: 0;
+    outline: 0;
+    background: none;
+    /* Start with zero width for animation */
+    width: 0;
+    /* Align text vertically */
+    line-height: 2rem; /* 32px, matches reduced height */
+    transition: width 0.3s ease-in-out; /* Smoother transition */
+    /* Bootstrap-like font size */
+    font-size: 1rem;
+    /* Ensure input takes available space */
+    flex-grow: 1;
+}
+
+/* Expanded input on interaction */
+.search .search_input,
+.search_input:focus {
+    padding: 0 0.625rem; /* 10px */
+    width: 28rem; /* 448px, fits within container */
+    caret-color: #dc3545; /* Bootstrap’s --bs-danger (red) for caret */
+}
+
+/* Search icon styles */
+.search_icon {
+    /* Smaller, proportional size */
+    height: 2.5rem; /* 40px */
+    width: 2.5rem; /* 40px */
+    /* Float removed, using flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    /* Smooth color transition */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for icon */
+.search:hover > .search_icon {
+    background-color: #dc3545; /* Bootstrap’s --bs-danger (red) */
+    color: #fff;
+}
+
+/* Remove default link underline (unchanged) */
+a:link {
+    text-decoration: none;
+}
+
+.search_icon {
+    height: 50px;
+    width: 70px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}

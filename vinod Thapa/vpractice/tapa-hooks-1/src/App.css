@@ -53,9 +53,10 @@
 
 
 #root {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background: lavender;
   /* max-width: 1280px; */
-  
+  height: 100%;
   width: 100%;
   margin: 0 auto;
   padding: 2rem;

@@ -29,6 +29,40 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+/* my */
+.min-div{
+  display: block;
+  margin: 20px 50px;
+  border: 0.5px solid gray;
+  padding: 20px 60px;
+
+  color:rgb(97, 30, 30);
+
+}
+
+.c1{
+  background-color: #ebafaf80;
+  padding: 10px;
+}
+.c2{
+  background-color: #c7a9a9;
+  padding: 10px;
+}
+.c3{
+  background-color: #84837ec5;
+  padding: 10px;
+}
+.c4{
+  background-color: #f7d2193f;
+  padding: 10px;
+}
+
+h2{
+  font-size:medium;
+  line-height: 1.1;
+  padding: 5px;
+  background-color: #836ece7a;
+}
 
 h1 {
   /* font-size: 3.2em; */
@@ -36,7 +70,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* my */
 h1{
   padding: 5px;
   border: 2px solid #575fdad1;
@@ -56,6 +89,24 @@ h1{
 
 /* my */
 
+label{
+  padding: 10px;
+}
+
+input{
+  color: rgb(8, 14, 198);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 8px;
+  border-width: 1px;
+}
+.show-data{
+  color: rgb(8, 14, 198);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
 button {
   border-radius: 8px;
   border: 1.5px solid transparent;
