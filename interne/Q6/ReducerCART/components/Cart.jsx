@@ -1,15 +1,30 @@
 import React, { useRef, useState } from 'react'
 import { GloablHook } from './store/context'
 
+
 export const Cart = () => {
-  const { mycart , setMyCart} = GloablHook()
+  const { dispatch , mycarts } = GloablHook()
+  // const {dispatch}=GloablHook()
+
+  console.log('# ',mycarts);
+  
   const[val , setVal]=useState(0)
 
   const removE = (id,q) => {
-    setMyCart(mycart.filter((prestElem) => {
-      // return prestElem.id !== id
-      return !(prestElem.id === id && prestElem.quantity === q);
-    }))
+
+    dispatch({
+      type: 'RM_MY-CART',
+      payload: {
+        id, q
+      }
+
+    })
+
+
+    // setMyCart(state.mycarts.filter((prestElem) => {
+    //   return 101;
+      // return !(prestElem.id === id && prestElem.quantity === q);
+    // }))
   }
 
   
@@ -27,14 +42,14 @@ export const Cart = () => {
       setVal(val-1)
     }
   }
-
-
-
+ 
+const totalCartPrice = mycarts.reduce((total, item) => total + item.price , 0);
+const chrg= totalCartPrice>40000 ? (totalCartPrice/10):0
 
 
 
   return (<>
-    <div className="bg-light min-vh-100 py-4">
+    <div className="bg-light min-vh-100 py-4 mt-4">
       <div className="container">
         <div className="card mx-auto" style={{ maxWidth: '540px' }}>
           
@@ -44,7 +59,7 @@ export const Cart = () => {
           </div>
 
           {/* Cart Item */}
-          {mycart.map((mc) => (
+          {mycarts.map((mc) => (
             <div className="card-body" style={{borderBottom:"0.8px solid black"}}>
               <div className="row align-items-center">
                 <div className="col-4 col-md-3">
@@ -58,8 +73,8 @@ export const Cart = () => {
                   <h3 className="h6 mb-1">{mc.title}</h3>
                   <p className="text-muted small mb-1">White</p>
                   <div className="d-flex align-items-center mb-2">
-                    <span className="h6 font-weight-bold text-success mb-1 me-3">Rs. {mc.discountedTotal}</span>
-                    <span className="text-muted small text-decoration-line-through ml-2">Rs. {mc.price}</span>
+                    <span className="h6 font-weight-bold text-success mb-1 me-3">Rs. {mc.price}</span>
+                    <span className="text-muted small text-decoration-line-through ml-2">Rs. {mc.discountedTotal}</span>
                     <span className="badge badge-info ml-2">10% Off</span>
                   </div>
                   <div className="d-flex align-items-center">
@@ -93,16 +108,16 @@ export const Cart = () => {
             <h4 className="h6 mb-3">Order Summary</h4>
             <ul className="list-group list-group-flush">
               <li className="list-group-item d-flex justify-content-between align-items-center px-0 py-1">
-                <span className="text-muted">Price (1 item)</span>
-                <span>Rs. 1,349</span>
+                <span className="text-muted">Price ({mycarts.length} items)</span>
+                <span>Rs. {totalCartPrice}</span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center px-0 py-1">
                 <span className="text-muted">Delivery Charges</span>
-                <span className="text-success">Free</span>
+                <span className="text-success">{chrg}</span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center px-0 py-2 font-weight-bold">
                 <span>Amount Payable</span>
-                <span>Rs. 1,349</span>
+                <span>Rs. {totalCartPrice+chrg}</span>
               </li>
             </ul>
           </div>
