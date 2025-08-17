@@ -1,0 +1,13 @@
+.bg {
+  background-color: rgba(179, 238, 238, 0.644) !important;
+}
+
+.updte {
+  position: absolute;
+  display: block;
+}
+
+.model-con {
+  transform: translate(70%, 20%);
+  max-width: 20em;
+}

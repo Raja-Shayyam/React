@@ -1,7 +1,11 @@
-import { useState } from "react"
+import { lazy, Suspense, useState } from "react"
 import { Header } from '../components/Header'
 import { Homestore } from '../components/Homestore'
-import { Cart } from "../components/Cart"
+// import { Cart } from "../components/Cart"
+// const Cart = lazy(() => import('../components/Cart'))
+const Cart = lazy(() =>
+  import('../components/Cart').then(module => ({ default: module.Cart }))
+);
 
 
 function App() {
@@ -10,9 +14,14 @@ function App() {
 
   return (
     <>
-      <Header setShow={setShow}/>
-      {show ? <Cart/>:
-      <Homestore />}
+      <Header setShow={setShow} />
+      {
+        show ? 
+          <Suspense><Cart /></Suspense>
+          
+          :
+          <Homestore />
+      }
     </>
   )
 }
