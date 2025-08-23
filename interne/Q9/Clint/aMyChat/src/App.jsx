@@ -7,13 +7,14 @@ import { Mwssaes } from '../componenets/Mwssaes'
 import { useState } from 'react'
 import { useMemo } from 'react'
 import { UpComingMSG } from '../componenets/upComingMSG'
-import { use } from 'react'
+
 import { useReducer } from 'react'
 import { Login } from "../componenets/Login"
 
 
+  // const socket = useMemo(() => io("http://localhost:3000"), [])
 function App({ id_name }) {
-  const socket = useMemo(() => io("http://localhost:3000"), [])
+  const socket = useMemo(() => io("http://192.168.10.3:3000"), [])
   console.log('----------------', socket.id);
 
   const [msg, setMsg] = useState('')
@@ -63,13 +64,13 @@ function App({ id_name }) {
     })
 
     if (id_name) {
-      let a = 'kutty'
-      socket.emit("user", a);
-      console.log('mu user name ', a);
+      // let a = 'kutty'
+      socket.emit("user", id_name);
+      console.log('mu user name ', id_name);
     }
 
-    socket.on("userwelcome",(d)=>{
-      console.log('d',d);
+    socket.on("userwelcome", (d) => {
+      console.log('d', d);
       alert(d)
     })
 
@@ -78,10 +79,11 @@ function App({ id_name }) {
       console.log(s);
     });
 
-    socket.on("mesage-toAll", (values,ids,name_id) => {
-      console.log('to All ', name_id, name_id, 'ids ', ids,  'USER: ', values);
+    socket.on("mesage-toAll", (values, ids, cooloor, name_id) => {
+      console.log('to All ', name_id, name_id, 'ids ', ids, 'USER: ', values);
 
-      dispatch({ type: 'SET_MSG', payload: { id: ids, text: values, color: 'colr', usernm: name_id } })
+      dispatch({ type: 'SET_MSG', payload: { id: ids, text: values, color: cooloor, usernm: name_id } })
+      
       // dispatch({ type: 'SET_MSG', payload: data });
     });
 
@@ -104,7 +106,7 @@ function App({ id_name }) {
       socket.off("welcome");
       socket.off("mesage-toAll");
     };
-  }, [socket,id_name])
+  }, [socket, id_name])
 
   useEffect(() => {
     if (msg) {

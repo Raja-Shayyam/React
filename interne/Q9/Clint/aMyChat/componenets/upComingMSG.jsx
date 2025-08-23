@@ -1,14 +1,19 @@
-
+import { useRef } from 'react';
+import { useEffect } from 'react';
+import { Audio } from './audio';
 
 export const UpComingMSG = ({ state, ID }) => {
+
   console.log("id", ID);
 
   return (
     <>
       <div className="card-body d-flex flex-column gap-2" style={{ height: "400px", overflowY: "auto" }}>
 
+
         {state.mmsG_id.map((m, i) => (
           <div key={i}>
+            {m.id == ID ? '' : <Audio />}
             <div className={`d-flex ${m.id == ID ? 'justify-content-end' : 'align-items-start'}`}>
               <div className="p-2 rounded  text-dark" style={{ backgroundColor: m.color }}>
                 <strong>  ID: </strong> <span>{m.id == ID ? 'Me ' : m.usernm}</span>
