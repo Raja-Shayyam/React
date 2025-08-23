@@ -1,33 +1,40 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Slidbar } from '../components/sidebar'
+import { Home } from '../pages/Home'
+import { Newuser } from '../pages/Newuser'
 import './App.css'
+import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom"
+import { EditUser } from '../pages/EditUser'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [myuser, setuser] = useState([])
+  
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <><div className="container">
+      <div className="row text-center">
+        <h1 className="white">ren - chart</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      {/* style={{width:'80%'}} */}
+      <div className="row">
+        <div className="offset-md-1 col-md-10" style={{ width: "fit-content" }}>
+          <div className="card panel">
+
+            <BrowserRouter>
+
+              <Slidbar />
+              <Routes>
+                <Route path="/" element={<Home setuser={setuser} myuser={myuser}/>} />
+                <Route path="/NewUser" element={<Newuser userLen={myuser.length} setuser={setuser}/>} />
+                <Route path="/editUser" element={<EditUser setuser={setuser}/>} />
+              </Routes>
+
+            </BrowserRouter>
+
+          </div>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    </div>
     </>
   )
 }
