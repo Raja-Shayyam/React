@@ -142,7 +142,7 @@ function App({ id_name }) {
   return (
     <>
       <Header />
-      <div className="container py-4">
+      <div className="container " style={{margin:'5px'}}>
         <div className="card " style={{
           border: `3px solid ${state.userColors}`,
           // boxShadow:`inset 9px 6rem 8rem rgb(62 183 78 / 86%) `

@@ -15,10 +15,15 @@ export const UpComingMSG = ({ state, ID }) => {
           <div key={i}>
             {m.id == ID ? '' : <Audio />}
             <div className={`d-flex ${m.id == ID ? 'justify-content-end' : 'align-items-start'}`}>
-              <div className="p-2 rounded  text-dark" style={{ backgroundColor: m.color }}>
-                <strong>  ID: </strong> <span>{m.id == ID ? 'Me ' : m.usernm}</span>
-                <br style={{ padding: "0.5px 0" }} />
-                <strong>Msg: </strong> <span>{m.text}</span>
+              <div>
+                <div className='fst-italic fs-6'><strong>  ID: </strong> <span>{m.id == ID ? 'Me ' : m.usernm}</span></div>
+                <div className="p-2 rounded-4  text-dark"
+                  style={{ backgroundColor: m.color, fontFamily: 'sans-serif' }}>
+
+                  {/* <br style={{ padding: "0.5px 0" }} /> */}
+                  <strong>Msg: </strong> <span>{m.text}</span>
+
+                </div>
 
               </div>
             </div>

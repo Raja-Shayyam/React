@@ -13,7 +13,7 @@ export const Login = ({ user }) => {
   return (
     <div className='container '>
       <div className="d-flex align-items-center py-4 bg-body-tertiary vh-100">
-        <main className="form-signin w-100 my-2 m-auto">
+        <main className="form-signin w-100 my-2 mx-5 m-auto">
           <form onSubmit={handle} >
             <img
               className="mb-4"
@@ -26,7 +26,7 @@ export const Login = ({ user }) => {
 
             <div className="form-floating mb-2">
               <input
-                type="email"
+                type="text"
                 className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
@@ -35,7 +35,7 @@ export const Login = ({ user }) => {
               <label htmlFor="floatingInput">Email address</label>
             </div>
 
-            <div className="form-floating mb-2">
+            <div className="form-floating mb-3">
               <input
                 type="password"
                 className="form-control"
@@ -45,17 +45,7 @@ export const Login = ({ user }) => {
               <label htmlFor="floatingPassword">Password</label>
             </div>
 
-            <div className="form-check text-start my-3">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="remember-me"
-                id="checkDefault"
-              />
-              <label className="form-check-label" htmlFor="checkDefault">
-                Remember me
-              </label>
-            </div>
+            
 
             <button className="btn btn-primary w-100 py-2" type="submit">
               Sign in
