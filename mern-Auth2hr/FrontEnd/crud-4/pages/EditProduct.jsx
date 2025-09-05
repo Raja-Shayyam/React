@@ -183,7 +183,7 @@ export const EditProduct = () => {
                 </div>
                 <button type="submit" className="btn w-100 btn-lg btn-danger bg-gradient-danger">
                   <i className="fi fi-search"></i>
-                  Search
+                  Gone to change 
                 </button>
               </form>
             </div>

@@ -29,6 +29,13 @@ export const Addproducts = () => {
     e.preventDefault()
     console.log('newdata ', Newdata);
     const resp = await aDDProducts(user.id, Newdata)
+    setnewdata({
+      title: '',
+      description: '',
+      img_url: '',
+      price: '',
+      quantity: ''
+    })
   }
 
 
@@ -166,7 +173,7 @@ export const Addproducts = () => {
                 </div>
                 <button type="submit" className="btn w-100 btn-lg btn-danger bg-gradient-danger">
                   <i className="fi fi-search"></i>
-                  Search
+                  Add Product
                 </button>
               </form>
             </div>
