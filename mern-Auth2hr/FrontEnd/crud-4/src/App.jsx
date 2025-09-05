@@ -17,7 +17,10 @@ const App = () => {
   console.log(True);
 
   return (
-    <div className='pt-3' style={{backgroundImage:'url(https://cdn.pixabay.com/photo/2024/03/21/14/29/chevrolet-8647804_1280.jpg)'}}>
+    <div className='pt-3 ' style={{
+      backgroundImage:'url(https://cdn.pixabay.com/photo/2024/03/21/14/29/chevrolet-8647804_1280.jpg)',
+      paddingBottom: "20px"
+      }}>
       <BrowserRouter>
 
         <Header />

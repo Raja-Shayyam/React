@@ -40,10 +40,10 @@ export const UserPersonalProducts = () => {
 
   return (
     <>
-      <div className="container my-5 p-3" style={{
+      <div className="container mt-5 p-3" style={{
         // backgroundImage: 'url(https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_1280.jpg)',
         backgroundSize: "cover",
-
+        
         // backgroundColor: " #f0f8ff2b",
         backdropFilter: "blur(14px)",
         border: "1px solid #00080f89"

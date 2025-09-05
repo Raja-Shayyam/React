@@ -25,16 +25,16 @@ export const Signin_login = () => {
     console.log(data);
 
     const respdata = await login(data)
-console.log(respdata);
+    console.log(respdata);
 
     if (respdata.sucess) {
       console.log(respdata);
 
       // setLoginUid(resp.data.user._id)
       // seTrue(true)
-      
+
       console.log(respdata.message);
-      
+
       alert(respdata.message);
 
       // `${<NavLink to={'/Home'} />}`  //! never work so make hook or >
@@ -53,12 +53,18 @@ console.log(respdata);
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
         rel="stylesheet"
       />
-      <section className="bg-light vh-100 d-flex align-items-center justify-content-center">
+      <section className=" vh-100 d-flex align-items-center justify-content-center"
+        style={{
+          backgroundColor: "rgb(81 154 219 / 25%",
+          backdropFilter: "blur(6px)",
+        }}
+        
+      >
 
 
         <div className="container">
           <div className="card shadow-lg rounded-4" style={{ maxWidth: '400px', margin: '0 auto' }}>
-            <div className="card-header bg-primary text-white text-center py-4">
+            <div className="card-header bg-primary text-white text-center py-4 rounded-top-4">
               <h2 className="card-title mb-0 fs-3 fw-semibold">Welcome Back!</h2>
             </div>
 

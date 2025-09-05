@@ -5,6 +5,7 @@ import 'dotenv/config';
 export const conectOdb = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_COMPAS)
+    // await mongoose.connect(process.env.MONGO_ATLS_2)
     console.log('connection established');
 
   } catch (error) {

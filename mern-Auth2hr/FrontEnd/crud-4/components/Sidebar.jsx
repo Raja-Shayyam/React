@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/App.css'
 import { UserProfile } from './userProfile'
 import useNav from '../customHooks/navtoHome';
+import { Menu } from './menu';
 
 export const Header = () => {
-const { navgate } = useNav()
+  const { navgate } = useNav()
+  const [show, setShow] = useState(false)
 
+  const handleshow = () => {
+    console.log('clicked menu');
+    setShow(prev => !prev)
+  }
 
   return (
     <>
@@ -14,22 +20,39 @@ const { navgate } = useNav()
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
         rel="stylesheet"
       />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+      />
+
       <header className="p-2" >
         {/* Mobile Header fixed-top*/}
         <div className="d-lg-none bg-white shadow-sm rounded-3 mx-auto mt-3  p-2 ">
           <div className="d-flex justify-content-between align-items-center h-8">
             {/* Mobile Menu Toggle */}
-            <button
-              className="btn p-0"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Open main menu"
-            >
-              <i className="bi bi-list fs-4"></i>
-            </button>
+
+            <div className="d-flex align-items-center w-25">
+              <i className="bi bi-list fs-4 me-2" onClick={handleshow} ></i>
+              <span className={`${show ? 'd-flex' : 'd-none'}`}>
+                <button
+                  className="dropdown-item"
+                  onClick={() => setSelected("Profile")}
+                >
+                  <UserProfile />
+                </button>
+
+                <button
+                  className="dropdown-item"
+                  onClick={() => navgate("/userPersonalProducts")}
+                >
+                  <i className="bi bi-bag me-2"></i>
+                </button>
+              </span>
+
+            </div>
 
             {/* Mobile Logo */}
-            <a href="/" title="Allbirds" className="flex-grow-1 text-center">
+            <a title="Allbirds" className="flex-grow-1 text-center">
               {/* Using a single logo for simplicity */}
               <img src="https://tse1.mm.bing.net/th/id/OIP.6vYGedCsOhG7bZooM4rG5gHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Allbirds Logo" className="logo-dark" style={{ height: '30px', width: '60px' }} />
             </a>
